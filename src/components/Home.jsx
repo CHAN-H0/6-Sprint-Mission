@@ -1,5 +1,5 @@
 import '../styles/Home.css';
-import Logo from '../assets/images/logo/logo.svg';
+
 import feature1 from '../assets/images/home/feature1-image.png';
 import feature2 from '../assets/images/home/feature2-image.png';
 import feature3 from '../assets/images/home/feature3-image.png';
@@ -8,30 +8,12 @@ import instagramLogo from '../assets/images/social/instagram-logo.svg';
 import twitterLogo from '../assets/images/social/twitter-logo.svg';
 import youtubeLogo from '../assets/images/social/youtube-logo.svg';
 import { Link } from 'react-router-dom';
+import Header from './header/Header';
 
 function Home() {
   return (
     <div>
-      <header>
-        <Link
-          to="/"
-          aria-label="홈으로 이동"
-        >
-          <img
-            src={Logo}
-            alt="판다마켓 로고"
-            width="153"
-          />
-        </Link>
-        <Link
-          to="/login"
-          id="loginLink"
-          className="button"
-        >
-          로그인
-        </Link>
-      </header>
-
+      <Header />
       <main className="with-header">
         <section
           id="hero"
