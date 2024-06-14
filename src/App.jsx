@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Privacy from './components/Privacy';
 import Signup from './components/Signup';
 import './styles/Global.css';
+import Community from './components/Community';
 
 function App() {
   return (
@@ -34,6 +35,10 @@ function App() {
         <Route
           path="/signup"
           element={<Signup />}
+        />
+        <Route
+          path="/community"
+          element={<Community />}
         />
       </Routes>
     </Router>
