@@ -1,17 +1,25 @@
+import { Link } from 'react-router-dom';
+import Logo from '../assets/images/logo/logo.svg';
+import eyeInvisible from '../assets/images/icons/eye-invisible.svg';
+import kakaoLogo from '../assets/images/social/kakao-logo.png';
+import googleLogo from '../assets/images/social/google-logo.png';
+import '../styles/Global.css';
+import '../styles/Auth.css';
+
 function Login() {
   return (
     <div>
       <main className="auth-container">
-        <a
-          href="index.html"
+        <Link
+          to="/"
           className="logo-home-link"
           aria-label="홈으로 이동"
         >
           <img
-            src="images/logo/logo.svg"
+            src={Logo}
             alt="판다마켓 로고"
           />
-        </a>
+        </Link>
 
         <form
           id="loginForm"
@@ -57,7 +65,7 @@ function Login() {
               >
                 <img
                   className="password-toggle-icon"
-                  src="images/icons/eye-invisible.svg"
+                  src={eyeInvisible}
                   alt="비밀번호 숨김 상태 아이콘"
                 />
               </button>
@@ -94,7 +102,7 @@ function Login() {
               aria-label="구글 로그인"
             >
               <img
-                src="images/social/google-logo.png"
+                src={googleLogo}
                 alt="구글 로그인"
                 width="42"
               />
@@ -106,7 +114,7 @@ function Login() {
               aria-label="카카오톡 로그인"
             >
               <img
-                src="images/social/kakao-logo.png"
+                src={kakaoLogo}
                 alt="카카오톡 로그인"
                 width="42"
               />
@@ -115,7 +123,7 @@ function Login() {
         </div>
 
         <div className="auth-switch">
-          판다마켓이 처음이신가요? <a href="signup.html">회원가입</a>
+          판다마켓이 처음이신가요? <Link to="/signup">회원가입</Link>
         </div>
       </main>
 

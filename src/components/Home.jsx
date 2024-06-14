@@ -7,13 +7,14 @@ import facebookLogo from '../assets/images/social/facebook-logo.svg';
 import instagramLogo from '../assets/images/social/instagram-logo.svg';
 import twitterLogo from '../assets/images/social/twitter-logo.svg';
 import youtubeLogo from '../assets/images/social/youtube-logo.svg';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
     <div>
       <header>
-        <a
-          href="index.html"
+        <Link
+          to="/"
           aria-label="홈으로 이동"
         >
           <img
@@ -21,14 +22,14 @@ function Home() {
             alt="판다마켓 로고"
             width="153"
           />
-        </a>
-        <a
-          href="login.html"
+        </Link>
+        <Link
+          to="/login"
           id="loginLink"
           className="button"
         >
           로그인
-        </a>
+        </Link>
       </header>
 
       <main className="with-header">
@@ -42,12 +43,12 @@ function Home() {
               <br />
               거래해 보세요
             </h1>
-            <a
-              href="items.html"
+            <Link
+              to="/items"
               className="button pill-button"
             >
               구경하러 가기
-            </a>
+            </Link>
           </div>
         </section>
 

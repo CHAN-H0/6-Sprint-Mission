@@ -1,26 +1,32 @@
+import { Link } from 'react-router-dom';
+import Logo from '../assets/images/logo/logo.svg';
+import eyeInvisible from '../assets/images/icons/eye-invisible.svg';
+import kakaoLogo from '../assets/images/social/kakao-logo.png';
+import googleLogo from '../assets/images/social/google-logo.png';
+import '../styles/Global.css';
+import '../styles/Auth.css';
+
 function Signup() {
   return (
     <div>
       <main className="auth-container">
-        <a
-          href="index.html"
+        <Link
+          to="/"
           className="logo-home-link"
           aria-label="홈으로 이동"
         >
           <img
-            src="images/logo/logo.svg"
+            src={Logo}
             alt="판다마켓 로고"
           />
-        </a>
+        </Link>
 
-        {/* <!-- 로그인 form과 동일한 스크립트 코드를 사용하고 있기 때문에, 구분을 위해 ID 추가 --> */}
         <form
           id="signupForm"
           method="post"
         >
           <div className="input-item">
             <label htmlFor="email">이메일</label>
-            {/* <!-- form 관련 태그에 `required` 속성을 사용하면 해당 필드를 필수 입력 항목으로 지정해 폼 제출 전 클라이언트 측에서 간단한 유효성 검사를 할 수 있어요. --> */}
             <input
               id="email"
               name="email"
@@ -28,12 +34,6 @@ function Signup() {
               placeholder="이메일을 입력해 주세요"
               required
             />
-            {/* <!-- 
-            오류 메세지 처리
-            - 사용자 입력값이 유효성 검사 기준을 충족하지 않을 때 표시될 메시지
-            - <span> 태그와 고유 ID를 사용하여 각 오류 메시지를 특정하고, 자바스크립트를 통해 메세지의 표시 여부를 제어
-            - 'error-message' class로 오류 메시지의 스타일을 지정
-          --> */}
             <span
               id="emailEmptyError"
               className="error-message"
@@ -82,7 +82,7 @@ function Signup() {
               >
                 <img
                   className="password-toggle-icon"
-                  src="images/icons/eye-invisible.svg"
+                  src={eyeInvisible}
                   alt="비밀번호 숨김 상태 아이콘"
                 />
               </button>
@@ -118,7 +118,7 @@ function Signup() {
               >
                 <img
                   className="password-toggle-icon"
-                  src="images/icons/eye-invisible.svg"
+                  src={eyeInvisible}
                   alt="비밀번호 숨김 상태 아이콘"
                 />
               </button>
@@ -137,7 +137,6 @@ function Signup() {
             </span>
           </div>
 
-          {/* <!-- <button> 태그에 직접 disabled 속성을 넣어 기본적으로 비활성화 상태를 만들어줄 수도 되지만, 우리는 자바스크립트 코드 내에서 submit button 요소를 선택한 뒤 속성을 제어할 거예요. --> */}
           <button
             type="submit"
             className="button pill-button full-width"
@@ -156,7 +155,7 @@ function Signup() {
               aria-label="구글 로그인"
             >
               <img
-                src="images/social/google-logo.png"
+                src={googleLogo}
                 alt="구글 로그인"
                 width="42"
               />
@@ -168,7 +167,7 @@ function Signup() {
               aria-label="카카오톡 로그인"
             >
               <img
-                src="images/social/kakao-logo.png"
+                src={kakaoLogo}
                 alt="카카오톡 로그인"
                 width="42"
               />
@@ -177,7 +176,7 @@ function Signup() {
         </div>
 
         <div className="auth-switch">
-          이미 회원이신가요? <a href="login.html">로그인</a>
+          이미 회원이신가요? <Link to="/login">로그인</Link>
         </div>
       </main>
 
